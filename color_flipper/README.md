@@ -2,7 +2,7 @@
 
 ## Description
 
-In this project user is able to pick up several random colors by clicking on "Pick a Color" button
+In this project user is able to pick up several random color by clicking on "Pick a Color" button
 
 ### JavaScript Features Used includes:
 
