@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: sans-serif;
+}
+
+.quote-box {
+    transform: translateY(100px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    background-color: rgb(79, 230, 197);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: rgb(214, 45, 186);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.quote-box article {
+    font-size: 1.5rem;
+}
+
+.quote-box p {
+    font-weight: bold;
+}
+
+.quote-box
+.btn-container
+button {
+    outline: none;
+    border: none;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 19px;
+    background-color: rgb(86, 169, 207);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px;
+}
+
+.quote-box
+.btn-container
+button:hover {
+    background-color: rgb(34, 86, 145);
+    transition: 0.3s;
+}
+
+@media (max-width: 636px)
+{
+    .quote-box {
+        width: 90%;
+    }
+}
