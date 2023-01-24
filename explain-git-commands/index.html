@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git.Commands</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Type the git command and It will explain it for you</h2>
+        <form id="search-form">
+            <div class="form-group">
+                <input autocomplete="off" type="text" placeholder="Enter the git command you would like to understand (e.g. git init)" id="search-command-text">
+            </div>
+            <div class="form-group">
+                <button type="submit">
+                    Explain
+                </button>
+                <button class="modal-btn" type="button">
+                    Commands
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="command-desc">
+        <h2 class="command-title"></h2>
+        <article>
+            <p class="command-description"></p>
+        </article>
+        <a class="command-link" href="" target="_blank"></a>
+    </div>
+
+    <div class="modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>The list of git commands you can learn here</h2>
+            </div>
+            <div class="modal-body">
+                <!-- insert git commands here -->
+            </div>
+            <div class="modal-footer">
+                <button class="close-btn" type="button">
+                    close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
