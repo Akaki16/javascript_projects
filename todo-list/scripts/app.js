@@ -109,11 +109,18 @@ export class Todos {
         const filteredTodos = todos.getTodos().filter(todo => todo.id != id);
         localStorage.setItem('todos', JSON.stringify(filteredTodos));
     }
+
+    static markTodo(id) {
+        const todos = new Todos();
+        const todo = todos.getTodos().find(todo => todo.id === id);
+        todo.completed = true;
+        localStorage.setItem('todos', JSON.stringify(todos.getTodos()));
+    }
 }
 
 export class Todo {
     constructor(title, duration, difficulty, description) {
-        this.id = this.incrementId();
+        this.id = Todo.generateRandomUnicId();
         this.title = title;
         this.duration = duration;
         this.difficulty = difficulty;
@@ -121,10 +128,8 @@ export class Todo {
         this.completed = false;
     }
 
-    incrementId() {
-        if (!this.id) this.id = 0;
-        this.id++;
-        return this.id;
+    static generateRandomUnicId() {
+        return Math.random().toString(36).substr(2, 9);
     }
 }
 
@@ -158,11 +163,11 @@ export class UI {
 
             const todoCard = `
                 <h5 style="color: ${difficultyColor}" class="card-header">${todo.difficulty}</h5>
-                <div class="card-body">
+                <div class="card-body ${todo.completed ? 'bg-success-subtle' : ''}">
                     <h5 class="card-title">${todo.title}</h5>
                     <p class="card-text">${todo.description}</p>
                     <a href="#" data-index=${todo.id} class="btn btn-danger delete-btn">Delete</a>
-                    <a href="#" data-index=${todo.id} class="btn btn-primary complete-btn">Complete</a>
+                    <a href="#" data-index=${todo.id} class="btn btn-primary complete-btn ${todo.completed ? 'btn-success' : ''}">${todo.completed ? 'Completed' : 'Complete'}</a>
                 </div>
             `;
 
@@ -175,11 +180,25 @@ export class UI {
     }
 
     static deleteTodo() {
-        document.addEventListener('click', (e) => {
+        document.querySelector('.todos').addEventListener('click', (e) => {
             if (e.target.classList.contains('delete-btn')) {
                 e.target.parentElement.parentElement.remove();
                 const todoId = e.target.dataset.index;
                 Todos.removeTodo(todoId);
+            }
+        });
+    }
+
+    static completeTodo() {
+        document.querySelector('.todos').addEventListener('click', (e) => {
+            if (e.target.classList.contains('complete-btn')) {
+                e.target.textContent = 'Completed';
+                e.target.classList.remove('btn-primary');
+                e.target.classList.add('btn-success');
+                e.target.disabled = true;
+
+                const todoId = e.target.dataset.index;
+                Todos.markTodo(todoId);
             }
         });
     }
