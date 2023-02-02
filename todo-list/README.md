@@ -12,4 +12,15 @@ Create, Read, Update, Delete.
 * HTML
 * CSS
 * JavaScript
- D
+
+## Running Instructions
+
+* Open terminal in your computer
+
+* Go to desktop: `cd Desktop`
+
+* Clone this repository: `git clone [repo link]`
+
+* Go to cloned project: `cd [cloned project]`
+
+* Open it with vscode and run the project using live server
