@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+
+.program-title {
+    text-align: center;
+    font-weight: normal;
+}
+
+#distance-form {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#distance-form .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* margin: 10px; */
+}
+
+#distance-form
+.form-group
+input {
+    height: 45px;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgb(59, 69, 87);
+    border-radius: 10px;
+    font-size: 19px;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#distance-form
+.form-group
+label {
+    margin: 5px;
+}
+
+#distance-form
+.form-group
+.form_message {
+    margin: 5px;
+}
+
+#distance-form
+button {
+    height: 45px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    font-size: 19px;
+    border: none;
+    background-color: rgb(90, 184, 179);
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#distance-form
+button:hover {
+    background-color: rgb(90, 184, 200);
+    transition: 0.4s;
+}
+
+.result {
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 636px) {
+    .program-title {
+        font-size: 1.5rem;
+    }
+
+    #distance-form {
+        width: 90%;
+    }
+}
